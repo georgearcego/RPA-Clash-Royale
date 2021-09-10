@@ -1,0 +1,111 @@
+{
+    "tasks": {
+        "Acessar Clash Royale": {
+            "alias": "acessar_site",
+            "start": true,
+            "next": [
+                "login",
+               "end"
+            ],
+            "actions": [
+                {
+                    "status": "PASS",
+                    "task": "login"
+                },
+                {
+                    "status": "FAIL",
+                    "task": "end"
+                }
+            ]
+        },        
+        "Realizar Login": {
+            "alias": "login",
+            "next": [
+               "chave", 
+               "end"
+            ],
+            "actions": [
+                {
+                    "status": "PASS",
+                    "task": "chave"
+                },
+                {
+                    "status": "FAIL",
+                    "task": "end"
+                }
+            ]
+        },        
+        "Criar Nova Chave": {
+            "alias": "chave",
+            "next": [
+                "busca_info",
+               "end"
+            ],
+            "actions": [
+                {
+                    "status": "PASS",
+                    "task": "busca_info"
+                },
+                {
+                    "status": "FAIL",
+                    "task": "end"
+                }
+            ]
+        },        
+        "Busca Informacoes Clan": {
+            "alias": "busca_info",
+            "next": [
+                "lista_membro",
+               "end"
+            ],
+            "actions": [
+                {
+                    "status": "PASS",
+                    "task": "lista_membro"
+                },
+                {
+                    "status": "FAIL",
+                    "task": "end"
+                }
+            ]
+        },        
+        "Lista Membros Clan": {
+            "alias": "lista_membro",
+            "next": [
+                "salva_lista",
+               "end"
+            ],
+            "actions": [
+                {
+                    "status": "PASS",
+                    "task": "salva_lista"
+                },
+                {
+                    "status": "FAIL",
+                    "task": "end"
+                }
+            ]
+        },        
+        "Salva Lista Clan": {
+            "alias": "salva_lista",
+            "next": [
+               "end"
+            ],
+            "actions": [
+                {
+                    "status": "PASS",
+                    "task": "end"
+                },
+                {
+                    "status": "FAIL",
+                    "task": "end"
+                }
+            ]
+        },        
+        "End Task": {
+            "alias": "end",
+            "end": true,
+            "next": []
+        }
+    }
+}
